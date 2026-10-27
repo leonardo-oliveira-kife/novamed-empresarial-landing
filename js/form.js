@@ -64,6 +64,14 @@
       }
     }
 
+    if (field.dataset.validate === 'employees' && value) {
+      var employees = Number(value);
+      if (!Number.isInteger(employees) || employees < 1) {
+        setFieldError(field, 'Informe a quantidade de colaboradores.');
+        return false;
+      }
+    }
+
     setFieldError(field, '');
     return true;
   }

@@ -244,34 +244,31 @@
             <span class="field__error" role="alert"></span>
           </div>
 
-          <div class="field-row">
-            <div class="field" data-field-individual>
-              <label for="lead-age">Idade</label>
-              <input
-                id="lead-age"
-                name="age"
-                type="number"
-                inputmode="numeric"
-                min="0"
-                max="120"
-                placeholder="Sua idade"
-                data-validate="age"
-                required
-              />
-              <span class="field__error" role="alert"></span>
-            </div>
+          <div class="field">
+            <label for="lead-company">Nome da empresa</label>
+            <input
+              id="lead-company"
+              name="company"
+              type="text"
+              placeholder="Nome da sua empresa"
+              autocomplete="organization"
+              required
+            />
+            <span class="field__error" role="alert"></span>
+          </div>
 
-            <div class="field" data-field-familia hidden>
-              <label for="lead-lives">Vidas Asseguradas</label>
+          <div class="field-row">
+            <div class="field">
+              <label for="lead-employees">Colaboradores</label>
               <input
-                id="lead-lives"
-                name="lives"
+                id="lead-employees"
+                name="employees"
                 type="number"
                 inputmode="numeric"
-                min="2"
-                max="20"
-                value="2"
-                data-validate="lives"
+                min="1"
+                placeholder="Ex.: 25"
+                data-validate="employees"
+                required
               />
               <span class="field__error" role="alert"></span>
             </div>

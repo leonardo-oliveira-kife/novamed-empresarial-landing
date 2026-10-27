@@ -18,8 +18,8 @@ window.NOVAMED_LEAD_FORM_CONFIG = {
 
   PAYLOAD_FIELDS: {
     name: 'nome',
-    age: 'idade',
-    lives: 'numero_vidas',
+    company: 'empresa',
+    employees: 'numero_colaboradores',
     phone: 'telefone',
     email: 'email',
     planType: 'tipo_plano',

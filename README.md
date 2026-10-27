@@ -51,8 +51,8 @@ window.NOVAMED_LEAD_FORM_CONFIG = {
 
   PAYLOAD_FIELDS: {
     name: 'nome',
-    age: 'idade',
-    lives: 'numero_vidas',
+    company: 'empresa',
+    employees: 'numero_colaboradores',
     phone: 'telefone',
     email: 'email',
     planType: 'tipo_plano',
@@ -76,8 +76,8 @@ Exemplo de payload enviado:
 ```json
 {
   "nome": "Ana Ribeiro",
-  "idade": "41",
-  "numero_vidas": "",
+  "empresa": "Ribeiro Contabilidade LTDA",
+  "numero_colaboradores": "25",
   "telefone": "(62) 99999-8888",
   "email": "ana@empresa.com.br",
   "tipo_plano": "empresa",
@@ -89,7 +89,7 @@ Exemplo de payload enviado:
 }
 ```
 
-Nesta LP o formulário tem só a opção **Empresa**, então `tipo_plano` sempre chega como `"empresa"`, com `idade` preenchido e `numero_vidas` vazio.
+Nesta LP o formulário tem só a opção **Empresa**, então `tipo_plano` sempre chega como `"empresa"`. Em vez de idade e vidas, ele pede **Nome da empresa** (`empresa`) e **Colaboradores** (`numero_colaboradores`, número inteiro a partir de 1) — os dois obrigatórios.
 
 **Se o CRM esperar nomes de campo diferentes**, só troque o valor (lado direito) de cada linha em `PAYLOAD_FIELDS` — a chave (lado esquerdo) é interna do código e não deve mudar.
 
@@ -123,7 +123,7 @@ Um único lugar controla os dois botões de WhatsApp do site (o flutuante no can
 | Envio do formulário (sucesso) | `js/form.js`, dentro do `.then()` do `fetch`, logo após `showFeedback('Recebemos seus dados!...', 'success')` |
 | Envio do formulário (erro) | `js/form.js`, dentro do `.catch()` |
 | Clique no botão de WhatsApp (flutuante ou rodapé) | Elementos com atributo `data-whatsapp-link` |
-| Troca de tab Individual/Família | `js/form.js`, dentro do listener de `[data-plan-toggle]` |
+| Clique no botão "Empresa" do formulário | `js/form.js`, dentro do listener de `[data-plan-toggle]` |
 
 Se for usar Google Tag Manager, o lugar natural pra colar o snippet é no `<head>` de `index.html` (antes do primeiro `<link rel="stylesheet">`) e o `<noscript>` logo após a abertura do `<body>`. Depois é só disparar `dataLayer.push(...)` nos pontos da tabela acima.
 

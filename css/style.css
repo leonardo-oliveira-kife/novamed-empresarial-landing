@@ -588,6 +588,7 @@ body.video-modal-open {
   flex-direction: column;
   gap: 2px;
   flex: 1;
+  min-width: 0;
 }
 
 .field[hidden] {
